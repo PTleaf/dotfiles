@@ -17,5 +17,6 @@ cmp.setup({
     }, {
         { name = "path" },
     }),
-    mapping = require("keymapping").cmp(cmp)
+    mapping = require("keymapping").cmp(cmp),
+    formatting = require('lsp.lspkind').formatting
 })
