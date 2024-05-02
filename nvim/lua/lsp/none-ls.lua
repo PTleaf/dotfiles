@@ -16,10 +16,10 @@ null_ls.setup({
         -- 其他 formatter 方式
         formatters.prettier,
     },
-    -- 保存自动格式化
-    on_attach = function(client)
-        if client.resolved_capabilities.document_formatting then
-            vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
-        end
+    on_attach = function(_)
+        vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()']])
+        -- if client.resolved_capabilities.document_formatting then
+        --   vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+        -- end
     end,
 })

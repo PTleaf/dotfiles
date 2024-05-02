@@ -16,9 +16,14 @@ map("n", "<M-m>", ":NvimTreeToggle<CR>", opt)
 -- bufferline
 -- ctrl+w 关闭  
 map("n", "<C-w>", ":Bdelete!<CR>", opt)
-map("n", "<leader>bl", ":BufferLineCloseRight<CR>", opt)
-map("n", "<leader>bh", ":BufferLineCloseLeft<CR>", opt)
-map("n", "<leader>bc", ":BufferLinePickClose<CR>", opt)
+
+-- diffview
+map("v", "<leader>vf", ":'<,'>DiffviewFileHistory<CR>", opt);
+map("n", "<leader>vc", ":DiffviewClose<CR>", opt);
+map("n", "<leader>vf", ":DiffviewFileHistory", opt);
+map("n", "<leader>vo", ":DiffviewOpen<CR>", opt);
+
+
 
 
 -- window
