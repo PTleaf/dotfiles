@@ -16,9 +16,14 @@ map("n", "<M-m>", ":NvimTreeToggle<CR>", opt)
 -- bufferline
 -- ctrl+w 关闭  
 map("n", "<C-w>", ":Bdelete!<CR>", opt)
-map("n", "<leader>bl", ":BufferLineCloseRight<CR>", opt)
-map("n", "<leader>bh", ":BufferLineCloseLeft<CR>", opt)
-map("n", "<leader>bc", ":BufferLinePickClose<CR>", opt)
+
+-- diffview
+map("v", "<leader>vf", ":'<,'>DiffviewFileHistory<CR>", opt);
+map("n", "<leader>vc", ":DiffviewClose<CR>", opt);
+map("n", "<leader>vf", ":DiffviewFileHistory", opt);
+map("n", "<leader>vo", ":DiffviewOpen<CR>", opt);
+
+
 
 
 -- window
@@ -58,7 +63,7 @@ pluginKeys.mapLsp = function (mapbuf)
         -- rename
     mapbuf("n", "<leader>r", ":lua vim.lsp.buf.rename<CR>", opt)
     -- code action
-    mapbuf("n", "<leader>ca", ":lua vim.lsp.buf.code_action()<CR>", opt)
+    mapbuf("n", "<leader>ca", ":Lspsaga code_action<CR>", opt)
     -- go to definition
     mapbuf("n", "gd", ":lua vim.lsp.buf.definition()<CR>", opt)
     mapbuf("n", "gt", ":lua vim.lsp.buf.type_definition()<CR>", opt)

@@ -13,9 +13,11 @@ cmp.setup({
     },
     sources = cmp.config.sources({
         { name = "nvim_lsp" },
-        { name = "vsnip" }
+        { name = "vsnip" },
+        { name = "codeverse" }
     }, {
         { name = "path" },
     }),
-    mapping = require("keymapping").cmp(cmp)
+    mapping = require("keymapping").cmp(cmp),
+    formatting = require('lsp.lspkind').formatting
 })
